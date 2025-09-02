@@ -85,38 +85,24 @@ Supplier → Email Invoice → OCR → ERP Validation → Approval Workflow → 
 ⚠️ Potential Risks & Recovery
 
 API Downtime (OCR/ERP/Banking)
-
 Mitigation: Implement retry queue with exponential backoff.
-
 Alert finance team with real-time Slack/Email notification.
-
 Data Extraction Errors (OCR Misread)
-
 Mitigation: Flag “low-confidence fields” for manual review.
-
 Build human-in-the-loop validation step.
 
 8. Security & Privacy
 🔒 Sensitive Data Handling
-
 Invoices contain vendor banking details & tax info.
-
 Use TLS 1.2+ encryption for all API communication.
-
 Store files in encrypted storage (AWS S3 + KMS).
-
 Role-Based Access Control (RBAC) → only finance team access.
-
 Maintain immutable audit logs for SOX/GDPR compliance.
 
 9. Rollout Plan
 📅 Phase-Wise Implementation
-
 Phase 1 (Pilot) → Automate invoice capture + validation for 1 vendor group.
-
 Phase 2 (Department Rollout) → Extend to all vendors; add approval workflows.
-
 Phase 3 (Scale) → Automate payments & reconciliation; integrate BI dashboards.
-
 Phase 4 (Optimization) → Add anomaly detection (AI) to prevent fraud/duplicates.
 
